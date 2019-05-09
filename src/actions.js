@@ -5,6 +5,7 @@ export const ACTION_CREATE_POST = 'ACTION_CREATE_POST';
 export const ACTION_UPDATE_POST = 'ACTION_UPDATE_POST';
 
 export const ACTION_DELETE_POST = 'ACTION_DELETE_POST';
+export const ACTION_SELECT_POST = 'ACTION_SELECT_POST'
 
 // actin creators
 
@@ -37,8 +38,16 @@ export function deletePost(id) {
         }
     };
 }
+
+export function selectPost (id) {
+    return {
+        type: ACTION_SELECT_POST,
+        payload: id
+    }
+}
 // just for when developing.
 // comment out after everything is working
 window.createPost = createPost
 window.deletePost = deletePost
 window.updatePost = updatePost
+window.selectPost = selectPost
