@@ -26,3 +26,6 @@ export function updatePost() {
 export function deletePost() {
 
 }
+// just for when developing.
+// comment out after everything is working
+window.createPost = createPost
