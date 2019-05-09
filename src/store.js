@@ -4,7 +4,7 @@ import {
 } from 'redux'
 
 import posts from './reducers/posts';
-
+import selectedId from './reducers/selectedId';
 const frequency = 2000
 const LS_KEY = 'blog storage'
 
@@ -13,7 +13,8 @@ const LS_KEY = 'blog storage'
 // pass an object to combineReducers.
 // this object should be shaped like your state
 const rootReducer = combineReducers({
-    posts: posts
+    posts: posts,
+    selectedId: selectedId
 });
 
 // check local storage for any previously saved app state

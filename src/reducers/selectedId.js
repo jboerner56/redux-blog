@@ -4,9 +4,7 @@ export default function selectedId(state='', action={type:''}) {
     switch (action.type) {
         case ACTION_SELECT_POST:
             return action.payload
-            
             break;
-    
         default:
         return state;
             break;
