@@ -26,12 +26,17 @@ export default function posts(state={}, action={type:''}) {
             delete state[action.payload.id];
             return deleteState;
         case ACTION_UPDATE_POST: 
-        return {
-            ...state,
-            [action.payload.id]: {
-                title: action.payload.title || state[action.payload.id].title,
-                contents: action.payload.contents || state[action.payload.id].contents
+        const postToUpdate = state[action.payload.id];
+        if(postToUpdate) {
+            return {
+                ...state,
+                [action.payload.id]: {
+                    title: action.payload.title || postToUpdate.title,
+                    contents: action.payload.contents || postToUpdate.contents
+                }
             }
+        } else {
+            return state
         }
         default:
         return state;
