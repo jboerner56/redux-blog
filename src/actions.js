@@ -19,8 +19,14 @@ export function createPost(payload) {
         payload
     }
 }
-export function updatePost() {
-
+export function updatePost(id, payload) {
+    return {
+        type: ACTION_UPDATE_POST,
+        payload: {
+            id, 
+            ...payload
+        }
+    };
 }
 
 export function deletePost(id) {
@@ -35,3 +41,4 @@ export function deletePost(id) {
 // comment out after everything is working
 window.createPost = createPost
 window.deletePost = deletePost
+window.updatePost = updatePost

@@ -1,6 +1,7 @@
 import { ACTION_CREATE_POST } from '../actions'
 import { generateId } from '../utils';
 import { ACTION_DELETE_POST } from '../actions';
+import {ACTION_UPDATE_POST} from '../actions';
 // reducer
 // function that accepts current state and an action. 
 // then calculates the next, new version of state.
@@ -24,6 +25,14 @@ export default function posts(state={}, action={type:''}) {
         };
             delete state[action.payload.id];
             return deleteState;
+        case ACTION_UPDATE_POST: 
+        return {
+            ...state,
+            [action.payload.id]: {
+                title: action.payload.title || state[action.payload.id].title,
+                contents: action.payload.contents || state[action.payload.id].contents
+            }
+        }
         default:
         return state;
             break;
