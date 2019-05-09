@@ -47,7 +47,7 @@ export function selectPost (id) {
 }
 // just for when developing.
 // comment out after everything is working
-window.createPost = createPost
-window.deletePost = deletePost
-window.updatePost = updatePost
-window.selectPost = selectPost
+window.createPost = createPost;
+window.deletePost = deletePost;
+window.updatePost = updatePost;
+window.selectPost = selectPost;

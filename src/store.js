@@ -4,17 +4,17 @@ import {
 } from 'redux'
 
 import posts from './reducers/posts';
-import selectedId from './reducers/selectedId';
+import selectedid from './reducers/selectedId';
 const frequency = 2000
-const LS_KEY = 'blog storage'
+const LS_KEY = 'blog-storage'
 
 
 
 // pass an object to combineReducers.
 // this object should be shaped like your state
 const rootReducer = combineReducers({
-    posts: posts,
-    selectedId: selectedId
+    posts,
+    selectedid
 });
 
 // check local storage for any previously saved app state
@@ -28,7 +28,7 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
 // auto save what is in state every 2 seconds to local storage
-    let saveInterval = setInterval(() => {
+setInterval(() => {
         const state = store.getState();
         localStorage.setItem(LS_KEY, JSON.stringify(state));
     }, frequency)

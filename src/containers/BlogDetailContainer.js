@@ -1,14 +1,14 @@
 import{connect} from 'react-redux';
-import BlogDetail from '../containers/BlogListContainer';
+import BlogDetail from '../components/BlogDetail';
 
 const mapStateToProps = (state) => {
     // need to find the post who's id was selected
     const id = state.selectedid;
     const post = state.posts[id]
     return {
-        post: post
+        post
     }
-}
+};
 
 const makeBlogDetailSmart = connect(
     mapStateToProps

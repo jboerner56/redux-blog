@@ -18,5 +18,5 @@ export default function BlogList({posts, handleClick}) {
         <ol>
             {listItems}
         </ol>
-    )
+    );
 }
